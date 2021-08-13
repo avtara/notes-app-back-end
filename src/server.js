@@ -37,16 +37,6 @@ const init = async () => {
       newResponse.code(response.statusCode);
       return newResponse;
     }
-
-    if (response instanceof Error) {
-      const newResponse = h.response({
-        status: 'error',
-        message: 'Maaf, terjadi kegagalan pada server kami.',
-      });
-      newResponse.code(500);
-      return newResponse;
-    }
-
     return response.continue || response;
   });
 
