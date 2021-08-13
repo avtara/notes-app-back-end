@@ -52,6 +52,7 @@ const init = async () => {
       newResponse.code(response.statusCode);
       return newResponse;
     }
+    
     return response.continue || response;
   });
 
